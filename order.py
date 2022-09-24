@@ -30,6 +30,13 @@ def getRand():
 
 User.update(point='110').where(User.username == 'joni').execute()
 
+
+
+# menghapus data
+
+User.delete().where(User.username == 'joni').execute()
+
+
 us = User.select().order_by(User.point.desc())
 for ser in us:
     print(f'Namanya {ser.username} Pointnya {ser.point} waktunya {ser.waktu}')
