@@ -48,7 +48,18 @@ sql_db.create_tables([User],safe='true')
 
 # Menggunakan Metode Select
 
-query = User.select()
+# query = User.select()
+# for user in query:
+#     print(f'{user.name} - {user.email}')
+
+# query = User.select().where((User.name == 'sinka') | (User.name == 'melodi' ))
+# for user in query:
+#     print(user.name)
+
+
+# mencari data
+
+query = User.select().where(User.email.contains('@'))
 for user in query:
-    print(f'{user.name} - {user.email}')
+    print(user.email)
 
